@@ -1,3 +1,7 @@
+from flask import session, redirect, url_for, g
+from functools import wraps
+from models import user as users, project as projects
+
 def email_in_session_required(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
